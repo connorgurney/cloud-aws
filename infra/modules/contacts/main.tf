@@ -20,31 +20,31 @@ resource "aws_account_primary_contact" "this" {
 resource "aws_account_alternate_contact" "billing" {
   alternate_contact_type = "BILLING"
 
-  name = var.billing_name
+  name  = var.billing_name
   title = var.billing_title
 
-  phone_number = var.billing_phone_number
-  email_address  = var.billing_email_address
+  phone_number  = var.billing_phone_number
+  email_address = var.billing_email_address
 }
 
 # Alternate contact for operations
 resource "aws_account_alternate_contact" "operations" {
   alternate_contact_type = "OPERATIONS"
 
-  name = var.operations_name
+  name  = var.operations_name
   title = var.operations_title
 
-  phone_number = var.operations_phone_number
-  email_address  = var.operations_email_address
+  phone_number  = var.operations_phone_number
+  email_address = var.operations_email_address
 }
 
 # Alternate contact for security
 resource "aws_account_alternate_contact" "security" {
   alternate_contact_type = "SECURITY"
 
-  name = var.security_name
+  name  = var.security_name
   title = var.security_title
 
-  phone_number = var.security_phone_number
-  email_address  = var.security_email_address
+  phone_number  = var.security_phone_number
+  email_address = var.security_email_address
 }
