@@ -54,15 +54,17 @@ resource "aws_iam_role_policy" "this" {
 resource "aws_cloudwatch_log_group" "this" {
     name = "/connorgurney/cloud"
 
-    # I'll be retaining logs via Grafana Loki but keep them here for 7 days in
-    # case my Lambda function to forward them fails to do so.
-    retention_in_days = 7
+    # I'll be retaining logs in Grafana Loki in the future but am setting the
+    # retention period based on my cyber-security standards until I've actually
+    # set the integration up.
+    retention_in_days = 30
 }
 
 # S3 bucket that CloudTrail insists on having
-# I don't use this bucket in any meaningful way, as I send all of my logs into
-# CloudWatch, and will be sending them onto Grafana Loki from there, but I'm
-# required to have one because, well, legacy stuff, I guess.
+# I won't be using this bucket in any meaningful way, as I'll be sending all of
+# my logs into CloudWatch and onto Grafana Loki from there, but I'm setting the
+# retention period based on my cyber-security standards until I've actually set
+# the integration up.
 resource "aws_s3_bucket" "this" {
     bucket = "connorgurney-cloud-logs-${var.environment}"
 }
@@ -105,7 +107,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "this" {
     status = "Enabled"
 
     expiration {
-      days = 1
+      days = 365
     }
   }
 }
