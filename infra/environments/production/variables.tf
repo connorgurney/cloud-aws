@@ -1,3 +1,9 @@
+# Name of environment to deploy to
+variable "environment" {
+  description = "The name of the environment to deploy to."
+  type        = string
+}
+
 # Full name of primary contact
 variable "primary_contact_name" {
   description = "The name of the primary contact."

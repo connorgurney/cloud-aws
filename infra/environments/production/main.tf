@@ -18,6 +18,12 @@ terraform {
 # AWS configuration
 provider "aws" {
   region = "eu-west-2"
+
+  default_tags {
+    tags = {
+      "connorgurney-environment" = var.environment
+    }
+  }
 }
 
 # Contacts
@@ -51,4 +57,11 @@ module "contacts" {
   security_title         = var.security_contact_title
   security_phone_number  = var.security_contact_phone_number
   security_email_address = var.security_contact_email_address
+}
+
+# Observability
+module "observability" {
+  source = "../../modules/observability"
+
+  environment = var.environment
 }
