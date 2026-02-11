@@ -21,7 +21,10 @@ provider "aws" {
 
   default_tags {
     tags = {
-      "connorgurney-environment" = var.environment
+      "connorgurney-workload"            = "cloud-aws"
+      "connorgurney-environment"         = var.environment
+      "connorgurney-exposure"            = "internal"
+      "connorgurney-data-classification" = "private"
     }
   }
 }
