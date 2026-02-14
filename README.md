@@ -13,7 +13,7 @@ repository.
 Everything within this repository is licensed under the [MIT License][license]
 unless otherwise stated.
 
-[docs]:    https://docs.internal.connorgurney.me.uk/manual/aws.html
-[iac]:     https://docs.internal.connorgurney.me.uk/manual/infrastructure-as-code.html
+[docs]:    https://docs.internal.connorgurney.me.uk/knowledge/aws.html
+[iac]:     https://docs.internal.connorgurney.me.uk/knowledge/iac.html
 [license]: LICENSE.md
 [vendor]:  https://aws.amazon.com
