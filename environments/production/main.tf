@@ -69,6 +69,11 @@ module "contacts" {
   security_email_address = var.security_contact_email_address
 }
 
+# Security and identity
+module "security" {
+  source = "../../modules/security"
+}
+
 # Observability
 module "observability" {
   source = "../../modules/observability"
