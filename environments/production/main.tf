@@ -29,6 +29,13 @@ provider "aws" {
   }
 }
 
+# Organisation and accounts
+module "organisation" {
+  source = "../../modules/organisation"
+
+  environment = var.environment
+}
+
 # Contacts
 module "contacts" {
   source = "../../modules/contacts"
